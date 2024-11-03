@@ -1,21 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.5</version>
+        <version>3.3.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>rw.transport</groupId>
-    <artifactId>VubaRide</artifactId>
+
+    <groupId>rw.management</groupId>
+    <artifactId>OnlineManagementSystem</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>VubaRide</name>
-    <description>This is the solution for transport</description>
+    <packaging>war</packaging>
+
+    <name>OnlineManagementSystem</name>
+    <description>This is a platform for managing courses, students, and instructors. The system allows users to sign up, enroll in courses, track progress, and receive certificates.</description>
+    <url/>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>honnette</id>
+            <name>Honnette Muhorakeye</name>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+
     <properties>
         <java.version>17</java.version>
-        <jjwt.version>0.11.5</jjwt.version>
+        <jjwt.version>0.11.5</jjwt.version> <!-- Specify the version here -->
     </properties>
 
     <dependencies>
@@ -24,13 +53,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <dependency>
-    <groupId>javax.annotation</groupId>
-    <artifactId>javax.annotation-api</artifactId>
-    <version>1.3.2</version> <!-- or the latest version -->
-    <scope>compile</scope>
-</dependency>
 
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+            <scope>compile</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -41,10 +70,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-        <dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-validation</artifactId>
-</dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -52,9 +77,9 @@
         </dependency>
 
         <dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-mail</artifactId>
-</dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
 
         <!-- BCrypt Password Hashing -->
         <dependency>
@@ -64,11 +89,10 @@
         </dependency>
 
         <!-- MySQL Connector -->
-        <dependency>
+           <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
-            <version>8.0.33</version> <!-- Specify the version -->
-            <scope>runtime</scope>
+            <version>8.0.33</version>
         </dependency>
 
         <!-- Lombok -->
@@ -133,9 +157,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0</version> <!-- Version can vary based on your setup -->
+                <version>3.0.0</version>
                 <configuration>
-                    <skipTests>true</skipTests> <!-- Ensure tests are not skipped -->
+                    <skipTests>false</skipTests> <!-- Fixed to ensure tests are not skipped -->
                 </configuration>
             </plugin>
         </plugins>
